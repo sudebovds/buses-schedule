@@ -1,3 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply w-screen h-screen;
+}
+
+.mainWrapper {
+  @apply flex flex-col justify-between items-center bg-primary w-screen h-screen font-main;
+}
+
+.titleText {
+  @apply text-[54px] font-bold text-mainBlack;
+}
+
+.item {
+  @apply flex bg-white w-[608px] h-[64px];
+}
+
+.item:not(:last-child) {
+  @apply mb-[8px];
+}
+
+.itemContent {
+  @apply relative flex justify-between items-center w-full pr-[56px] py-[8px];
+}
+
+.itemContent > div:has(img) {
+  @apply relative flex w-[60%] h-full items-center before:block before:w-[4px] before:bg-green before:h-full before:absolute before:rounded-r-lg;
+}
+
+.itemContent > div:has(img) img {
+  @apply pl-[19px] pr-[10px];
+}
+
+.itemContent.late > div:has(img) {
+  @apply before:bg-red;
+}
