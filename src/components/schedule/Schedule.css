@@ -1,0 +1,3 @@
+.titleText {
+  @apply text-[40px] sm:text-[54px] mb-[64px] font-bold text-mainBlack;
+}

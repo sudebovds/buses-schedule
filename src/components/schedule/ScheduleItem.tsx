@@ -1,32 +1,35 @@
 import React, { FC, useState } from 'react'
+import { IBusStopInterfase } from '../../types'
 
 import './ScheduleItem.css'
-
-interface IScheduleItemInterface{
-    busNumber?: Number,
-    arivalDelay?: Number,
-    scheduledArrival?: Number,
-    realtimeArrival?: Number,
-    arrivalDelay?: Number,
-    realtime?: Boolean,
-    realtimeState?: String,
-    late: Boolean
+interface IStopItemInterface{
+    late: boolean,
+    busNumber: string,
+    delayTime?: string,
+    arrivalTimeLatency: string | null,
+    arrivalTime: string,
+    arrivalDate: string,
+    serviceDay: EpochTimeStamp
 }
 
-const ScheduleItem: FC<IScheduleItemInterface> = ({ late }) => {
+const ScheduleItem: FC<IStopItemInterface> = ({ late, busNumber, arrivalTimeLatency, arrivalTime, arrivalDate }) => {
   return (
     <li className="item">
         <div className={`itemContent ${late ? 'late' : null}`}>
             <div>
                 <img src="./assets/images/bus.svg" alt="bus-icon" />
-                <span className="hidden sm:inline-block">15</span>
+                <span className="hidden sm:inline-block">
+                    {busNumber}{arrivalTimeLatency ? ` (${arrivalTimeLatency} late)` : null}
+                </span>
                 <p className="flex flex-col sm:hidden">
-                <span>15</span>
-                <span className="text-textGray">In 1 minute / 11:48</span>
+                    <span>
+                        {busNumber}{arrivalTimeLatency ? ` (${arrivalTimeLatency} late)` : null}
+                    </span>
+                    <span className="text-textGray">In {arrivalTime} / {arrivalDate}</span>
                 </p>
             </div>
             <div className="hidden sm:block">
-                <span className="text-textGray">In 1 minute / 11:48</span>
+                <span className="text-textGray">In {arrivalTime} / {arrivalDate}</span>
             </div>
         </div> 
     </li>
