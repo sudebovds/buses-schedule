@@ -5,9 +5,5 @@
 @tailwind utilities;
 
 .mainWrapper {
-  @apply flex flex-col justify-between items-center bg-primary w-screen h-screen font-main;
-}
-
-.titleText {
-  @apply text-[40px] sm:text-[54px] font-bold text-mainBlack;
+  @apply flex flex-col justify-between items-center bg-primary w-screen h-screen font-main overflow-hidden;
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Clock from './Clock'
 import './style.css'
 
 const Header = () => {
@@ -13,9 +14,7 @@ const Header = () => {
         </div>
         </section>
         <section>
-        <div className="time">
-            <span className="text-[24px] sm:text-[54px] titleText">11:47</span>
-        </div>
+          <Clock />
         </section>
     </header>
   )
