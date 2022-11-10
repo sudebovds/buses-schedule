@@ -39,7 +39,7 @@ const Schedule = () => {
           />
           <ul>
             {
-              !loading && busStopData && busStopData.map((item: IBusStopInterfase, i) => {
+              !loading && busStopData && busStopData.length > 0 && busStopData.map((item: IBusStopInterfase, i) => {
                 let isLate = null;
                 let latency = null;
 
