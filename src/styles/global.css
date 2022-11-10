@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mainWrapper {
+  @apply flex flex-col justify-between items-center bg-primary w-screen h-screen font-main overflow-hidden;
+}

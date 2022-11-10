@@ -1,0 +1,23 @@
+.item {
+  @apply flex bg-white w-full max-w-[500px] sm:w-[608px] sm:max-w-[608px] h-[64px];
+}
+
+.item:not(:last-child) {
+  @apply mb-[8px];
+}
+
+.itemContent {
+  @apply relative flex justify-between items-center w-full pr-[56px] py-[8px];
+}
+
+.itemContent > div:has(img) {
+  @apply relative flex w-full sm:w-[60%] h-full items-center before:block before:w-[4px] before:bg-green before:h-full before:absolute before:rounded-r-lg;
+}
+
+.itemContent > div:has(img) img {
+  @apply pl-[19px] pr-[10px];
+}
+
+.itemContent.late > div:has(img) {
+  @apply before:bg-red;
+}

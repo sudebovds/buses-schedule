@@ -1,8 +1,14 @@
-function App() {
+import Footer from "./components/footer"
+import Header from "./components/header"
+import Main from "./components/main"
+
+const App = () => {
   
   return (
     <div className="mainWrapper">
-      Hello!
+      <Header />
+      <Main />
+      <Footer />
     </div>
   )
 }

@@ -1,0 +1,7 @@
+.mainHeader {
+  @apply flex justify-between items-start min-h-[18vh] sm:min-h-max sm:items-center w-full px-3 py-4 sm:px-[2rem] sm:py-[2.5rem];
+}
+
+.headerLeftSection {
+  @apply flex flex-col sm:flex-row h-full justify-between w-[40vw] items-start sm:items-center;
+}
